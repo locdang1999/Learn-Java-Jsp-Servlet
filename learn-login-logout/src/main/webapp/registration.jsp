@@ -12,9 +12,11 @@
 
 <!-- Main css -->
 <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-
+	<input type="hidden" id="status"
+		value="<%=request.getAttribute("status")%>">
 	<div class="main">
 
 		<!-- Sign up form -->
@@ -23,8 +25,8 @@
 				<div class="signup-content">
 					<div class="signup-form">
 						<h2 class="form-title">Sign up</h2>
-					
-						<form method="" action="" class="register-form"
+
+						<form method="post" action="register" class="register-form"
 							id="register-form">
 							<div class="form-group">
 								<label for="name"><i
@@ -76,10 +78,34 @@
 
 	</div>
 	<!-- JS -->
-	<script src="vendor/jquery/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="js/main.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+	<link
+		href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css"
+		rel="stylesheet">
 
+	<script type="text/javascript">
+		var status = document.getElementById("status").value;
+		console.log(status);
+		if (status == "success") {
 
+			/* swal("Congrats", "Account Created Successfully", "success"); */
+
+			Swal.fire({
+				position : "center",
+				icon : "success",
+				title : "Congrats",
+				text : "Account Created Successfully!",
+				showConfirmButton : false,
+				timer : 1500
+			});
+		}
+	</script>
 
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
