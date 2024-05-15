@@ -91,7 +91,6 @@
 
 	<script type="text/javascript">
 		var status = document.getElementById("status").value;
-		console.log(status);
 		if (status == "success") {
 
 			/* swal("Congrats", "Account Created Successfully", "success"); */
@@ -101,12 +100,9 @@
 				icon : "success",
 				title : "Congrats",
 				text : "Account Created Successfully!",
-				showConfirmButton : false,
-				timer : 1500
 			});
 		}
 	</script>
 
 </body>
-<!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
