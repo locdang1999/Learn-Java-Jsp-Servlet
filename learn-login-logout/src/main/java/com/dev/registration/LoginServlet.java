@@ -1,11 +1,10 @@
 package com.dev.registration;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,18 +12,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class RegistrationServlet
+ * Servlet implementation class LoginSevlet
  */
-@WebServlet("/register")
-public class RegistrationServlet extends HttpServlet {
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public RegistrationServlet() {
+	public LoginServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -36,54 +36,33 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String username = request.getParameter("name");
-		String email = request.getParameter("email");
-		String password = request.getParameter("pass");
-		String phone = request.getParameter("contact");
+		String email = request.getParameter("username");
+		String password = request.getParameter("password");
 
-//		PrintWriter out = response.getWriter();
-//		out.print(username);
-//		out.print(email);
-//		out.print(password);
-//		out.print(phone);
-
-		RequestDispatcher dispatcher = null;
 		Connection con = null;
+		HttpSession session = request.getSession();
+		RequestDispatcher dispatcher = null;
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "", "");
-			PreparedStatement pst = con
-					.prepareStatement("INSERT INTO users(username ,password ,email ,phone ) VALUES (? ,? ,? ,?)");
-			pst.setString(1, username);
+			PreparedStatement pst = con.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
+
+			pst.setString(1, email);
 			pst.setString(2, password);
-			pst.setString(3, email);
-			pst.setString(4, phone);
 
-			int rowCount = pst.executeUpdate();
-			dispatcher = request.getRequestDispatcher("registration.jsp");
-
-			if (rowCount > 0) {
-				request.setAttribute("status", "success");
-//				dispatcher = request.getRequestDispatcher("login.jsp");
-
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				session.setAttribute("name", rs.getString("username"));
+				dispatcher = request.getRequestDispatcher("index.jsp");
 			} else {
 				request.setAttribute("status", "failed");
-//				dispatcher = request.getRequestDispatcher("registration.jsp");
+				dispatcher = request.getRequestDispatcher("login.jsp");
 			}
-
 			dispatcher.forward(request, response);
-
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
-		} finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 	}
 
