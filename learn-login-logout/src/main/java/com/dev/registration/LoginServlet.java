@@ -43,9 +43,21 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		RequestDispatcher dispatcher = null;
 
+		if (email == null || email.equals("")) {
+			request.setAttribute("status", "InvalidEmail");
+			dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request, response);
+		}
+
+		if (password == null || password.equals("")) {
+			request.setAttribute("status", "InvalidPassword");
+			dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request, response);
+		}
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "", "");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "tk", "mk");
 			PreparedStatement pst = con.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
 
 			pst.setString(1, email);
