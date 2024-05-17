@@ -31,20 +31,23 @@
 							<div class="form-group">
 								<label for="name"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="name" id="name" placeholder="Your Name" />
+									type="text" name="name" id="name" placeholder="Your Name"
+									required="required" />
 							</div>
 							<div class="form-group">
 								<label for="email"><i class="zmdi zmdi-email"></i></label> <input
-									type="email" name="email" id="email" placeholder="Your Email" />
+									type="email" name="email" id="email" placeholder="Your Email"
+									required="required" />
 							</div>
 							<div class="form-group">
 								<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
-									type="password" name="pass" id="pass" placeholder="Password" />
+									type="password" name="pass" id="pass" placeholder="Password"
+									required="required" />
 							</div>
 							<div class="form-group">
 								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
 								<input type="password" name="re_pass" id="re_pass"
-									placeholder="Repeat your password" />
+									placeholder="Repeat your password" required="required" />
 							</div>
 							<div class="form-group">
 								<label for="contact"><i class="zmdi zmdi-lock-outline"></i></label>
@@ -101,6 +104,77 @@
 				title : "Congrats",
 				text : "Account Created Successfully!",
 			});
+		}
+
+		if (status == "InvalidUsername") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Please Enter Username!",
+			});
+		}
+
+		if (status == "InvalidEmail") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Please Enter Email!",
+			});
+		}
+
+		if (status == "InvalidPassword") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Please Enter Password!",
+			});
+		}
+
+		if (status == "InvalidRePassword") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Please Enter Repeat your password!",
+			});
+		}
+
+		if (status == "MatchPassword") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Password does not match password confirm!",
+			});
+		}
+
+		if (status == "InvalidContact") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Please Enter Contact!",
+			});
+		}
+
+		if (status == "InvalidContactLength") {
+
+			Swal
+					.fire({
+						position : "center",
+						icon : "error",
+						title : "Sorry",
+						text : "Please enter at least 10 characters and no more than 11 characters!",
+					});
 		}
 	</script>
 
