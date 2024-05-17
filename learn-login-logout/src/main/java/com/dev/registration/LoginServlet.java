@@ -57,7 +57,8 @@ public class LoginServlet extends HttpServlet {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "tk", "mk");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "root",
+					"Admin1234567@");
 			PreparedStatement pst = con.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
 
 			pst.setString(1, email);

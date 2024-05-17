@@ -40,6 +40,7 @@ public class RegistrationServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
 		String phone = request.getParameter("contact");
+		String rePassword = request.getParameter("re_pass");
 
 //		PrintWriter out = response.getWriter();
 //		out.print(username);
@@ -50,9 +51,50 @@ public class RegistrationServlet extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		Connection con = null;
 
+		if (username == null || username.equals("")) {
+			request.setAttribute("status", "InvalidUsername");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		}
+
+		if (email == null || email.equals("")) {
+			request.setAttribute("status", "InvalidEmail");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		}
+
+		if (password == null || password.equals("")) {
+			request.setAttribute("status", "InvalidPassword");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		}
+
+		if (rePassword == null || rePassword.equals("")) {
+			request.setAttribute("status", "InvalidRePassword");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		}
+
+		if (!password.equals(rePassword)) {
+			request.setAttribute("status", "MatchPassword");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		}
+
+		if (phone == null || phone.equals("")) {
+			request.setAttribute("status", "InvalidContact");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		} else if (phone.length() < 9 || phone.length() > 12) {
+			request.setAttribute("status", "InvalidContactLength");
+			dispatcher = request.getRequestDispatcher("registration.jsp");
+			dispatcher.forward(request, response);
+		}
+
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "tk", "mk");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "root",
+					"Admin1234567@");
 			PreparedStatement pst = con
 					.prepareStatement("INSERT INTO users(username ,password ,email ,phone ) VALUES (? ,? ,? ,?)");
 			pst.setString(1, username);
