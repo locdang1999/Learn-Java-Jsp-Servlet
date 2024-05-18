@@ -86,6 +86,10 @@
 		rel="stylesheet">
 
 	<script type="text/javascript">
+		if (window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href);
+		}
+		
 		var status = document.getElementById("status").value;
 		if (status == "failed") {
 
