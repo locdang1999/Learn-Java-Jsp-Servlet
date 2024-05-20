@@ -7,3 +7,5 @@
     <welcome-file>registration.jsp</welcome-file> -->
   </welcome-file-list>
 </web-app>
+
+<!-- http://localhost:8080/learn-login-logout/ -->
