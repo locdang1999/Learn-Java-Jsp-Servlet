@@ -53,6 +53,9 @@
 									class="label-agree-term"><span><span></span></span>Remember
 									me</label>
 							</div>
+							<div class="form-group">
+								<a href="forgotPassword.jsp">Forgot Password?</a>
+							</div>
 							<div class="form-group form-button">
 								<input type="submit" name="signin" id="signin"
 									class="form-submit" value="Log in" />
@@ -89,7 +92,7 @@
 		if (window.history.replaceState) {
 			window.history.replaceState(null, null, window.location.href);
 		}
-		
+
 		var status = document.getElementById("status").value;
 		if (status == "failed") {
 
