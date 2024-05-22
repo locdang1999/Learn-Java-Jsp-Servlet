@@ -36,6 +36,16 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		String email = request.getParameter("username");
 		String password = request.getParameter("password");
 
@@ -57,8 +67,7 @@ public class LoginServlet extends HttpServlet {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "root",
-					"Admin1234567@");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "root", "");
 			PreparedStatement pst = con.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
 
 			pst.setString(1, email);
@@ -77,16 +86,6 @@ public class LoginServlet extends HttpServlet {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

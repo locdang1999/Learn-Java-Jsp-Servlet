@@ -36,17 +36,27 @@ public class RegistrationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// TODO Auto-generated method stub
 		String username = request.getParameter("name");
 		String email = request.getParameter("email");
 		String password = request.getParameter("pass");
 		String phone = request.getParameter("contact");
 		String rePassword = request.getParameter("re_pass");
 
-//		PrintWriter out = response.getWriter();
-//		out.print(username);
-//		out.print(email);
-//		out.print(password);
-//		out.print(phone);
+//				PrintWriter out = response.getWriter();
+//				out.print(username);
+//				out.print(email);
+//				out.print(password);
+//				out.print(phone);
 
 		RequestDispatcher dispatcher = null;
 		Connection con = null;
@@ -93,8 +103,7 @@ public class RegistrationServlet extends HttpServlet {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "root",
-					"Admin1234567@");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/beststore?useSSL=false", "root", "");
 			PreparedStatement pst = con
 					.prepareStatement("INSERT INTO users(username ,password ,email ,phone ) VALUES (? ,? ,? ,?)");
 			pst.setString(1, username);
@@ -107,11 +116,11 @@ public class RegistrationServlet extends HttpServlet {
 
 			if (rowCount > 0) {
 				request.setAttribute("status", "success");
-//				dispatcher = request.getRequestDispatcher("login.jsp");
+//						dispatcher = request.getRequestDispatcher("login.jsp");
 
 			} else {
 				request.setAttribute("status", "failed");
-//				dispatcher = request.getRequestDispatcher("registration.jsp");
+//						dispatcher = request.getRequestDispatcher("registration.jsp");
 			}
 
 			dispatcher.forward(request, response);
@@ -127,16 +136,6 @@ public class RegistrationServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
