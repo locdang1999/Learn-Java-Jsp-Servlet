@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html>
 <head>
@@ -10,8 +10,10 @@
 	href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css'
 	rel='stylesheet'>
 <link href='' rel='stylesheet'>
-<script type='text/javascript'
-	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+	integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
 body {
 	background-position: center;
@@ -66,17 +68,18 @@ body {
 							your email address below.</li>
 						<li><span class="text-primary text-medium">2. </span>Our
 							system will send you an OTP to your email</li>
-						<li><span class="text-primary text-medium">3. </span>Enter the OTP on the 
-						next page</li>
+						<li><span class="text-primary text-medium">3. </span>Enter
+							the OTP on the next page</li>
 					</ol>
 				</div>
 				<form class="card mt-4" action="forgotPassword" method="POST">
 					<div class="card-body">
 						<div class="form-group">
 							<label for="email-for-pass">Enter your email address</label> <input
-								class="form-control" type="text" name="email" id="email-for-pass" required=""><small
-								class="form-text text-muted">Enter the registered email address . Then we'll
-								email a OTP to this address.</small>
+								class="form-control" type="text" name="email"
+								id="email-for-pass" required=""><small
+								class="form-text text-muted">Enter the registered email
+								address . Then we'll email a OTP to this address.</small>
 						</div>
 					</div>
 					<div class="card-footer">
