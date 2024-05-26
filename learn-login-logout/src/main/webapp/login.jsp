@@ -35,7 +35,7 @@
 					<div class="signin-form">
 						<h2 class="form-title">Sign in</h2>
 						<form method="post" action="login" class="register-form"
-							id="login-form">
+							id="login-form" autocomplete="off">
 							<div class="form-group">
 								<label for="username"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
@@ -104,7 +104,7 @@
 			});
 		}
 
-		if (status == "InvalidEmail") {
+		else if (status == "InvalidEmail") {
 
 			Swal.fire({
 				position : "center",
@@ -114,13 +114,33 @@
 			});
 		}
 
-		if (status == "InvalidPassword") {
+		else if (status == "InvalidPassword") {
 
 			Swal.fire({
 				position : "center",
 				icon : "error",
 				title : "Sorry",
 				text : "Please Enter Password!",
+			});
+		}
+
+		else if (status == "resetSuccess") {
+
+			Swal.fire({
+				position : "center",
+				icon : "success",
+				title : "Congrats",
+				text : "Password Reset Successfully!",
+			});
+		}
+
+		else if (status == "resetFailed") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Password Reset Failed!",
 			});
 		}
 	</script>
