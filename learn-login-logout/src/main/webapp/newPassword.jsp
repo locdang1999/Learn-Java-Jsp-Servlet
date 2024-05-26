@@ -10,8 +10,6 @@
 <link
 	href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'
 	rel='stylesheet'>
-<script type='text/javascript'
-	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <style>
 .placeicon {
 	font-family: fontawesome
@@ -27,6 +25,8 @@
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
 	<div>
+		<input type="hidden" id="status"
+			value="<%=request.getAttribute("status")%>">
 		<!-- Container containing all contents -->
 		<div class="container">
 			<div class="row justify-content-center">
@@ -44,7 +44,8 @@
 								<!-- User Name Input -->
 								<div class="form-group row justify-content-center px-3">
 									<div class="col-9 px-0">
-										<input type="text" name="password" placeholder="&#xf084; &nbsp; New Password"
+										<input type="text" name="password"
+											placeholder="&#xf084; &nbsp; New Password"
 											class="form-control border-info placeicon">
 									</div>
 								</div>
@@ -56,7 +57,7 @@
 											class="form-control border-info placeicon">
 									</div>
 								</div>
-							
+
 								<!-- Log in Button -->
 								<div class="form-group row justify-content-center">
 									<div class="col-3 px-3 mt-3">
@@ -68,7 +69,7 @@
 						</div>
 						<!-- Alternative Login -->
 						<div class="mx-0 px-0 bg-light">
-							
+
 							<!-- Horizontal Line -->
 							<div class="px-4 pt-5">
 								<hr>
@@ -83,9 +84,7 @@
 								</div>
 								<div
 									class="row justify-content-center align-items-center pt-4 pb-5">
-									<div class="col-4">
-										
-									</div>
+									<div class="col-4"></div>
 								</div>
 							</div>
 						</div>
@@ -94,8 +93,36 @@
 			</div>
 		</div>
 	</div>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+		integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script type='text/javascript'
 		src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
-	
+	<script src="js/main.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>
+	<link
+		href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.min.css"
+		rel="stylesheet">
+	<script type="text/javascript">
+		// Chặn reload page thì submit form
+		if (window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href);
+		}
+
+		var status = document.getElementById("status").value;
+
+		if (status == "MatchPassword") {
+
+			Swal.fire({
+				position : "center",
+				icon : "error",
+				title : "Sorry",
+				text : "Password does not match password confirm!",
+			});
+		}
+	</script>
+
 </body>
 </html>
