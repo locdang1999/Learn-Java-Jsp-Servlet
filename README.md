@@ -5,6 +5,22 @@ Learn Java Jsp Servlet, Jdbc, MVC, XML....
 - master - learn login logout project
 - master - learn login logout project
 - master - learn login logout project
+  
+# Setup environment
+- JDK
+- IDE
+> [Intellij](https://www.jetbrains.com/idea/download/?section=windows) 
+
+> [Eclipse](https://eclipseide.org/)
+
+> [Netbeans](https://netbeans.apache.org/front/main/download/)
+
+> [Spring Tool Suite](https://spring.io/tools)
+- Application Server
+> [Tomcat](https://tomcat.apache.org/)
+
+> [Weblogic](https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html)
+
 # Issue link fix
 - JSP, Servlet: 
 > [Block form submission on page reload](https://stackoverflow.com/questions/1317486/how-to-avoid-resubmit-in-jsp-when-refresh)
