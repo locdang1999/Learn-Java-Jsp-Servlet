@@ -1,7 +1,7 @@
 # Learn-Java-Jsp-Servlet
 Learn Java Jsp Servlet, Jdbc, MVC, XML....
 - master - learn login logout project
-- master - learn login logout project
+- dev1   - learn jsp & servlet tutorial
 - master - learn login logout project
 - master - learn login logout project
 - master - learn login logout project
@@ -20,6 +20,14 @@ Learn Java Jsp Servlet, Jdbc, MVC, XML....
 > [Tomcat](https://tomcat.apache.org/)
 
 > [Weblogic](https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html)
+
+# Create project
+- Eclipse
+  + Add server (Tomcat)
+  + [File](./img/create-project-1.png) > New > [Dynamic Web Project](./img/create-project-2.png) - Click next > [next](./img/create-project-3.png) > [check General web.xml deployment descriptor](./img/create-project-4.png) > Finish
+- Intellij
+  
+- Netbeans 
 
 # Issue link fix
 - JSP, Servlet: 
