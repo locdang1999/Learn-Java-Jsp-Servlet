@@ -37,11 +37,7 @@ public class AddServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+//		doGet(request, response);
 		int a = Integer.parseInt(request.getParameter("num1"));
 		int b = Integer.parseInt(request.getParameter("num2"));
 		
@@ -51,5 +47,17 @@ public class AddServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("Result is: " + sum);
 	}
+	
+//	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+////		int a = Integer.parseInt(request.getParameter("num1"));
+////		int b = Integer.parseInt(request.getParameter("num2"));
+////		
+////		int sum = a + b;
+////		
+////		System.out.println(sum);
+////		PrintWriter out = response.getWriter();
+////		out.println("Result is: " + sum);
+//	}
 
 }
