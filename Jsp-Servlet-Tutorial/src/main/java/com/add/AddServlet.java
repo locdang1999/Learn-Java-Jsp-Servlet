@@ -43,11 +43,13 @@ public class AddServlet extends HttpServlet {
 //		PrintWriter out = response.getWriter();
 //		out.println("Result is: " + sum);
 		
-		request.setAttribute("sum", sum);
+//		request.setAttribute("sum", sum);
+//		
+//		RequestDispatcher rd = request.getRequestDispatcher("sq");
+//
+//		rd.forward(request, response);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("sq");
-
-		rd.forward(request, response);
+		response.sendRedirect("sq?sum="+sum);
 	}
 
 	/**

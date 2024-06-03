@@ -12,9 +12,12 @@ public class SqServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		int sum = (int) request.getAttribute("sum");
+//		int sum = (int) request.getAttribute("sum");
+		int sum = Integer.parseInt(request.getParameter("sum"));
 		PrintWriter out = response.getWriter();
 
 		out.print("Hello Sq " + sum);
+
+		System.out.println("sq called.");
 	}
 }
