@@ -6,9 +6,11 @@ import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class AddServlet
@@ -42,14 +44,21 @@ public class AddServlet extends HttpServlet {
 //		System.out.println(sum);
 //		PrintWriter out = response.getWriter();
 //		out.println("Result is: " + sum);
-		
+
 //		request.setAttribute("sum", sum);
 //		
 //		RequestDispatcher rd = request.getRequestDispatcher("sq");
 //
 //		rd.forward(request, response);
-		
-		response.sendRedirect("sq?sum="+sum);
+
+//		response.sendRedirect("sq?sum=" + sum); // URL Rewriting
+
+//		HttpSession session = request.getSession();
+//		session.setAttribute("sum", sum);
+
+		Cookie cookie = new Cookie("sum", sum + "");
+		response.addCookie(cookie);
+		response.sendRedirect("sq");
 	}
 
 	/**
