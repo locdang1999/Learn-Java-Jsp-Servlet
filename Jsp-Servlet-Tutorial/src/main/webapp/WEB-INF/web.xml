@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>Jsp-Servlet-Tutorial</display-name>
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>addSvl</servlet-name>
 		<servlet-class>com.add.AddServlet</servlet-class>
 	</servlet>
@@ -22,10 +22,10 @@
 	<servlet-mapping>
 		<servlet-name>pqr</servlet-name>
 		<url-pattern>/sq</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 
-	<servlet>
+	<!-- <servlet>
 		<servlet-name>mysv</servlet-name>
 		<servlet-class>com.svcontexts.MyServlet</servlet-class>
 		<init-param>
@@ -37,7 +37,7 @@
 	<servlet-mapping>
 		<servlet-name>mysv</servlet-name>
 		<url-pattern>/home</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping> -->
 
 	<context-param>
 		<param-name>name</param-name>
