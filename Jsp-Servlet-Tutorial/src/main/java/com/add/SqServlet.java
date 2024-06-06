@@ -31,7 +31,11 @@ public class SqServlet extends HttpServlet {
 
 		PrintWriter out = response.getWriter();
 
+		out.println("<html>");
+		out.println("<body style='background-color:red'>");
 		out.print("Hello Sq " + sum);
+		out.println("</body>");
+		out.println("</html>");
 
 		System.out.println("sq called.");
 	}
