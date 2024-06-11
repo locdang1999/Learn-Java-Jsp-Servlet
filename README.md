@@ -2,7 +2,7 @@
 Learn Java Jsp Servlet, Jdbc, MVC, XML....
 - master - learn login logout project
 - dev1   - learn jsp & servlet tutorial
-- master - learn login logout project
+- dev2   - learn UserMgmt
 - master - learn login logout project
 - master - learn login logout project
   
@@ -36,7 +36,13 @@ Learn Java Jsp Servlet, Jdbc, MVC, XML....
 > [Javamail Could not convert socket to TLS GMail](https://stackoverflow.com/questions/16115453/javamail-could-not-convert-socket-to-tls-gmail)
 
 > [Must issue a STARTTLS command first](https://stackoverflow.com/questions/10509699/must-issue-a-starttls-command-first)
+- Eclipse
+> [The June 12th release of the Eclipse IDE 2024-06 - 4.32 requires Java 21.](https://www.eclipse.org/setups/sponsor/?scope=Eclipse%20IDE%20for%20Enterprise%20Java%20and%20Web%20Developers%20(includes%20Incubating%20components)&version=4.31.0.20240307-1200&campaign=2024-06)
 
 # Documentation link
 - JSP, Servlet: 
 > [Servlet Lifecycle](https://viettuts.vn/servlet/vong-doi-cua-servlet#goto-h2-2)
+
+# Note
+- JSP:
+> [.jsp convert to .java image_1](./img/Netbean-view-Servlet.png) > [.jsp convert to .java image_2](./img/Netbean-view-Servlet-show-view.png) 
