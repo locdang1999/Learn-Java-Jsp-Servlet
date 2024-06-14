@@ -9,7 +9,8 @@
 <!-- Declaration -->
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.sql.Statement, java.util.Random"%>
+<%@ include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
 	<%
 	out.println(5 + 7);
 	%>
-	My Fay Number is:<%=coef %>
+	My Fay Number is:<%=coef%>
 	My Fay Number1 is:
 	<%
 	out.println(coef);
