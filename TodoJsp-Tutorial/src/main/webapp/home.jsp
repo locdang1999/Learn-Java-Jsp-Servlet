@@ -30,5 +30,11 @@
 	<%
 	out.println(coef);
 	%>
+	<%
+	request.getParameter("name");
+	%>
+	<% pageContext.setAttribute("name", "Roger", PageContext.SESSION_SCOPE);
+		config.getInitParameter("name");
+	%>
 </body>
 </html>
