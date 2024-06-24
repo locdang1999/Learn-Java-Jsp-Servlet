@@ -9,7 +9,7 @@
 <!-- Declaration -->
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.sql.Statement, java.util.Random"%>
+	pageEncoding="UTF-8" import="java.sql.Statement, java.util.Random" errorPage="error.jsp"%> <!-- errorPage: change error page when main page error  -->
 <%@ include file="header.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -33,8 +33,24 @@
 	<%
 	request.getParameter("name");
 	%>
-	<% pageContext.setAttribute("name", "Roger", PageContext.SESSION_SCOPE);
-		config.getInitParameter("name");
+	<%
+	// Implicit Object in JSP
+	pageContext.setAttribute("name", "Roger", PageContext.SESSION_SCOPE);
+	config.getInitParameter("name");
+	%>
+	<br/>
+	<%
+	// Exception Handling in JSP
+	try {
+		int k = 9 / 0;
+
+	} catch (Exception e) {
+		out.println("Error" + e.getMessage());
+	}
+	%>
+	
+	<%
+	int k = 9 / 0;
 	%>
 </body>
 </html>
