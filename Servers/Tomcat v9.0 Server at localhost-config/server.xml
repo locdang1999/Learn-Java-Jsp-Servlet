@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="UserMgmt" path="/UserMgmt" reloadable="true" source="org.eclipse.jst.jee.server:UserMgmt"/><Context docBase="Jsp-Servlet-Tutorial" path="/Jsp-Servlet-Tutorial" reloadable="true" source="org.eclipse.jst.jee.server:Jsp-Servlet-Tutorial"/><Context docBase="TodoJsp-Tutorial" path="/TodoJsp-Tutorial" reloadable="true" source="org.eclipse.jst.jee.server:TodoJsp-Tutorial"/><Context docBase="learn-login-logout" path="/learn-login-logout" reloadable="true" source="org.eclipse.jst.jee.server:learn-login-logout"/></Host>
+      <Context docBase="UserMgmt" path="/UserMgmt" reloadable="true" source="org.eclipse.jst.jee.server:UserMgmt"/><Context docBase="Jsp-Servlet-Tutorial" path="/Jsp-Servlet-Tutorial" reloadable="true" source="org.eclipse.jst.jee.server:Jsp-Servlet-Tutorial"/><Context docBase="TodoJsp-Tutorial" path="/TodoJsp-Tutorial" reloadable="true" source="org.eclipse.jst.jee.server:TodoJsp-Tutorial"/><Context docBase="learn-login-logout" path="/learn-login-logout" reloadable="true" source="org.eclipse.jst.jee.server:learn-login-logout"/><Context docBase="JSTL-Tutorial" path="/JSTL-Tutorial" reloadable="true" source="org.eclipse.jst.jee.server:JSTL-Tutorial"/></Host>
     </Engine>
   </Service>
 </Server>
