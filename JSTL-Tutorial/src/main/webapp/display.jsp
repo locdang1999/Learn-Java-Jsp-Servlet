@@ -30,7 +30,7 @@
 	<h2>Connect DB</h2>
 	<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/usermgmt" user="root"
-		password="Admin1234567@" />
+		password="" />
 	<sql:query var="rs" dataSource="${db}">SELECT * FROM user </sql:query>
 	<c:forEach items="${rs.rows}" var="item">
 		<c:out value="${item.id}"></c:out> : <c:out value="${item.name}"></c:out>
