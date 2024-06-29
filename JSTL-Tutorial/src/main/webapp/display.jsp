@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,6 +23,15 @@
 	<br />
 	<c:forEach items="${studentLst}" var="st">
 	${st.name} <br />
+	</c:forEach>
+
+	<h2>Connect DB</h2>
+	<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/usermgmt" user="root"
+		password="Admin1234567@" />
+	<sql:query var="rs" dataSource="${db}">SELECT * FROM user </sql:query>
+	<c:forEach items="${rs.rows}" var="item">
+		<c:out value="${item.id}"></c:out> : <c:out value="${item.name}"></c:out><br />
 	</c:forEach>
 </body>
 </html>

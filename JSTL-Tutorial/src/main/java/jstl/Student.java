@@ -1,7 +1,7 @@
 package jstl;
 
 public class Student {
-	private int rollno;
+	private int id;
 	private String name;
 	
 	public Student() {
@@ -9,11 +9,11 @@ public class Student {
 	}
 
 	public int getRollno() {
-		return rollno;
+		return id;
 	}
 
 	public void setRollno(int rollno) {
-		this.rollno = rollno;
+		this.id = rollno;
 	}
 
 	public String getName() {
@@ -26,7 +26,7 @@ public class Student {
 
 	public Student(int rollno, String name) {
 		super();
-		this.rollno = rollno;
+		this.id = rollno;
 		this.name = name;
 	}
 	
