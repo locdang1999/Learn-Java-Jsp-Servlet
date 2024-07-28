@@ -30,7 +30,7 @@
 	<h2>Connect DB</h2>
 	<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/usermgmt" user="root"
-		password="" />
+		password="Admin1234567@" />
 	<sql:query var="rs" dataSource="${db}">SELECT * FROM user </sql:query>
 	<c:forEach items="${rs.rows}" var="item">
 		<c:out value="${item.id}"></c:out> : <c:out value="${item.name}"></c:out>
@@ -41,13 +41,17 @@
 	<c:set var="str" value="Hello Java ^^" />
 	Length: ${fn:length(str)}
 
+	<c:if test="${fn:contains(str, 'Java')}">
+		<br />
+		Java is Der
+	</c:if>
+
 	<c:forEach items="${fn:split(str, ' ')}" var="s">
 		<br />
 		${s}
 	</c:forEach>
-	
-	<br />
-	Index: ${fn:indexOf(str, "J")}
+
+	<br /> Index: ${fn:indexOf(str, "J")}
 
 </body>
 </html>
