@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>User Management</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      #frm {
+        width: 500px;
+        margin: auto;
+        margin-top: 100px;
+      }
+      marquee {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <marquee><h2 class="text-primary">Register Here</h2></marquee>
+      <form action="register" method="post" class="form card" id="frm">
+        <h2 class="bg-danger text-white card-header">Registration Form</h2>
+        <table class="table table-hover">
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="userName" required /></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" required /></td>
+          </tr>
+          <tr>
+            <td>Mobile</td>
+            <td><input type="text" name="mobile" required /></td>
+          </tr>
+          <tr>
+            <td>DOB</td>
+            <td><input type="date" name="dob" required /></td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>
+              <input type="radio" name="gender" value="male" checked /> Male
+              &nbsp; <input type="radio" name="gender" value="female" /> Female
+            </td>
+          </tr>
+          <tr>
+            <td>City</td>
+            <td>
+              <select name="city">
+                <option value="HoChiMinh">Ho Chi Minh</option>
+                <option value="HaNoi">Ha Noi</option>
+                <option value="SocTrang">Soc Trang</option>
+                <option value="VungTau">Vung Tau</option>
+                <option value="NhaTrang">Nha Trang</option>
+                <option value="BinhDuong">Binh Duong</option>
+                <option value="BacLieu">Bac Lieu</option>
+                <option value="CaMau">Ca Mau</option>
+                <option value="BinhPhuoc">Binh Phuoc</option>
+                <option value="DongNai">Dong Nai</option>
+                <option value="TraVinh">Tra Vinh</option>
+                <option value="CanTho">Can Tho</option>
+                <option value="PhuYen">Phu Yen</option>
+                <option value="PhanThiet">Phan Thiet</option>
+                <option value="SaPa">Sa Pa</option>
+                <option value="LaoCai">Lao Cai</option>
+                <option value="Hue">Hue</option>
+                <option value="BacNinh">Bac Ninh</option>
+                <option value="HaiPhong">Hai Phong</option>
+                <option value="BacCan">Bac Can</option>
+                <option value="MongCai">Mong Cai</option>
+                <option value="LangSon">Lang Son</option>
+                <option value="BinhDinh">Binh Dinh</option>
+                <option value="DaNang">Da Nang</option>
+                <option value="NgheAn">Nghe An</option>
+                <option value="HaTinh">Ha Tinh</option>
+                <option value="VinhPhuc">Vinh Phuc</option>
+                <option value="QuangNam">Quang Nam</option>
+                <option value="QuangNgai">Quang Ngai</option>
+                <option value="QuangBinh">Quang Binh</option>
+                <option value="LamDong">Lam Dong</option>
+                <option value="TayNguyen">Tay Nguyen</option>
+                <option value="ThaiNguyen">Thai Nguyen</option>
+                <option value="ThaiBinh">Thai Binh</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="card-footer">
+            <td>
+              <button type="submit" class="btn btn-outline-success">
+                Register
+              </button>
+            </td>
+            <td>
+              <button type="reset" class="btn btn-outline-danger">
+                Cancel
+              </button>
+            </td>
+          </tr>
+        </table>
+        <a href="showdata" class="btn btn-outline-success d-block"
+          >Show Users</a
+        >
+      </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
